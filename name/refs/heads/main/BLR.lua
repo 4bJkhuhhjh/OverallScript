@@ -305,6 +305,7 @@ G2L["22"]["TextWrapped"] = true;
 G2L["22"]["BorderSizePixel"] = 0;
 G2L["22"]["TextSize"] = 50;
 G2L["22"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["22"]["TextScaled"] = true;
 G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["22"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
