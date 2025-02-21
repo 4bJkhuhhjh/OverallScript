@@ -1,380 +1,466 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
--- Instances:
+-- Instances: 51 | Scripts: 7 | Modules: 0 | Tags: 0
+local G2L = {};
 
-local ScreenGui = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Frame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local HomeButton = Instance.new("ImageButton")
-local UICorner_2 = Instance.new("UICorner")
-local SpinButton = Instance.new("ImageButton")
-local UICorner_3 = Instance.new("UICorner")
-local UICorner_4 = Instance.new("UICorner")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local Home = Instance.new("Frame")
-local Texteee = Instance.new("Frame")
-local UICorner_5 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local ImageLabel = Instance.new("ImageLabel")
-local UICorner_6 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local Inf = Instance.new("Frame")
-local Frame_2 = Instance.new("Frame")
-local UICorner_7 = Instance.new("UICorner")
-local TextLabel_3 = Instance.new("TextLabel")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local UICorner_8 = Instance.new("UICorner")
-local InfSpinButton = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
-local TextLabel_4 = Instance.new("TextLabel")
-local ImageButton = Instance.new("ImageButton")
-local UICorner_10 = Instance.new("UICorner")
-local CurrentStyle = Instance.new("Frame")
-local UICorner_11 = Instance.new("UICorner")
-local TextLabel_5 = Instance.new("TextLabel")
-local Frame_3 = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
-local TextLabel_6 = Instance.new("TextLabel")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local UIPadding = Instance.new("UIPadding")
-local UIGridLayout = Instance.new("UIGridLayout")
-local Rejoin = Instance.new("TextButton")
-local UICorner_13 = Instance.new("UICorner")
-local NormalSpinStyle = Instance.new("TextButton")
-local UICorner_14 = Instance.new("UICorner")
-local LuckySpinStyle = Instance.new("TextButton")
-local UICorner_15 = Instance.new("UICorner")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.ScreenGui.Main
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 0;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["2"]["Size"] = UDim2.new(0.5129, 0, 0.522, 0);
+G2L["2"]["Position"] = UDim2.new(0.2132, 0, 0.23834, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Main]];
 
-Main.Name = "Main"
-Main.Parent = ScreenGui
-Main.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.213201821, 0, 0.238342404, 0)
-Main.Size = UDim2.new(0.512898326, 0, 0.521997035, 0)
-Main.ZIndex = 0
 
-Frame.Parent = Main
-Frame.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0295857992, 0, 0.0502392352, 0)
-Frame.Size = UDim2.new(0.0798816532, 0, 0.88516748, 0)
-Frame.ZIndex = 9
+-- StarterGui.ScreenGui.Main.Frame
+G2L["3"] = Instance.new("Frame", G2L["2"]);
+G2L["3"]["ZIndex"] = 9;
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(66, 66, 66);
+G2L["3"]["Size"] = UDim2.new(0.07988, 0, 0.88517, 0);
+G2L["3"]["Position"] = UDim2.new(0.02959, 0, 0.05024, 0);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-UICorner.CornerRadius = UDim.new(0, 30)
-UICorner.Parent = Frame
 
-HomeButton.Name = "HomeButton"
-HomeButton.Parent = Frame
-HomeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HomeButton.BackgroundTransparency = 1.000
-HomeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HomeButton.BorderSizePixel = 0
-HomeButton.Position = UDim2.new(0.166666672, 0, 0.0555743463, 0)
-HomeButton.Size = UDim2.new(0.666666687, 0, 0.0823761225, 0)
-HomeButton.Image = "http://www.roblox.com/asset/?id=109306454828475"
+-- StarterGui.ScreenGui.Main.Frame.UICorner
+G2L["4"] = Instance.new("UICorner", G2L["3"]);
+G2L["4"]["CornerRadius"] = UDim.new(0, 30);
 
-UICorner_2.CornerRadius = UDim.new(0, 30)
-UICorner_2.Parent = HomeButton
 
-SpinButton.Name = "SpinButton"
-SpinButton.Parent = Frame
-SpinButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpinButton.BackgroundTransparency = 1.000
-SpinButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpinButton.BorderSizePixel = 0
-SpinButton.Position = UDim2.new(0.166666672, 0, 0.175394163, 0)
-SpinButton.Size = UDim2.new(0.666666687, 0, 0.0823761225, 0)
-SpinButton.Image = "http://www.roblox.com/asset/?id=5449115660"
+-- StarterGui.ScreenGui.Main.Frame.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["3"]);
 
-UICorner_3.CornerRadius = UDim.new(0, 30)
-UICorner_3.Parent = SpinButton
 
-UICorner_4.CornerRadius = UDim.new(0, 30)
-UICorner_4.Parent = Main
 
-UIAspectRatioConstraint.Parent = Main
-UIAspectRatioConstraint.AspectRatio = 1.540
+-- StarterGui.ScreenGui.Main.Frame.HomeButton
+G2L["6"] = Instance.new("ImageButton", G2L["3"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Image"] = [[http://www.roblox.com/asset/?id=109306454828475]];
+G2L["6"]["Size"] = UDim2.new(0.66667, 0, 0.08238, 0);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Name"] = [[HomeButton]];
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Position"] = UDim2.new(0.16667, 0, 0.05557, 0);
 
-Home.Name = "Home"
-Home.Parent = ScreenGui
-Home.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-Home.BackgroundTransparency = 1.000
-Home.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Home.BorderSizePixel = 0
-Home.Position = UDim2.new(0.213201821, 0, 0.238342404, 0)
-Home.Size = UDim2.new(0.512898326, 0, 0.521997035, 0)
 
-Texteee.Name = "Texteee"
-Texteee.Parent = Home
-Texteee.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
-Texteee.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Texteee.BorderSizePixel = 0
-Texteee.Position = UDim2.new(0.326923072, 0, 0.107655503, 0)
-Texteee.Size = UDim2.new(0.631656826, 0, 0.12440192, 0)
+-- StarterGui.ScreenGui.Main.Frame.HomeButton.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(0, 30);
 
-UICorner_5.CornerRadius = UDim.new(0, 20)
-UICorner_5.Parent = Texteee
 
-TextLabel.Parent = Texteee
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(-0.000945830485, 0, -0.00294435932, 0)
-TextLabel.Size = UDim2.new(1, 0, 0.961538434, 0)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+-- StarterGui.ScreenGui.Main.Frame.SpinButton
+G2L["8"] = Instance.new("ImageButton", G2L["3"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["Image"] = [[http://www.roblox.com/asset/?id=5449115660]];
+G2L["8"]["Size"] = UDim2.new(0.66667, 0, 0.08238, 0);
+G2L["8"]["BackgroundTransparency"] = 1;
+G2L["8"]["Name"] = [[SpinButton]];
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Position"] = UDim2.new(0.16667, 0, 0.17539, 0);
 
-ImageLabel.Parent = Home
-ImageLabel.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.147928998, 0, 0.0502392352, 0)
-ImageLabel.Size = UDim2.new(0.147928998, 0, 0.239234447, 0)
-ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
 
-UICorner_6.CornerRadius = UDim.new(0, 100)
-UICorner_6.Parent = ImageLabel
+-- StarterGui.ScreenGui.Main.Frame.SpinButton.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
+G2L["9"]["CornerRadius"] = UDim.new(0, 30);
 
-TextLabel_2.Parent = Home
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.177514791, 0, 0.320574105, 0)
-TextLabel_2.Size = UDim2.new(0.761834323, 0, 0.567866147, 0)
-TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "Hi! \\n e"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 50.000
-TextLabel_2.TextWrapped = true
-TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel_2.TextYAlignment = Enum.TextYAlignment.Top
 
-Inf.Name = "Inf"
-Inf.Parent = ScreenGui
-Inf.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-Inf.BackgroundTransparency = 1.000
-Inf.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Inf.BorderSizePixel = 0
-Inf.Position = UDim2.new(0.213201821, 0, 0.238342404, 0)
-Inf.Size = UDim2.new(0.512898326, 0, 0.521997035, 0)
-Inf.Visible = false
+-- StarterGui.ScreenGui.Main.UICorner
+G2L["a"] = Instance.new("UICorner", G2L["2"]);
+G2L["a"]["CornerRadius"] = UDim.new(0, 30);
 
-Frame_2.Parent = Inf
-Frame_2.BackgroundColor3 = Color3.fromRGB(103, 103, 103)
-Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0.147928998, 0, 0.0486111417, 0)
-Frame_2.Size = UDim2.new(0.816568077, 0, 0.128156558, 0)
 
-UICorner_7.CornerRadius = UDim.new(0, 30)
-UICorner_7.Parent = Frame_2
+-- StarterGui.ScreenGui.Main.UIAspectRatioConstraint
+G2L["b"] = Instance.new("UIAspectRatioConstraint", G2L["2"]);
+G2L["b"]["AspectRatio"] = 1.54;
 
-TextLabel_3.Parent = Frame_2
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0, 0, 0.068965517, 0)
-TextLabel_3.Size = UDim2.new(0.998188376, 0, 0.862068951, 0)
-TextLabel_3.Font = Enum.Font.FredokaOne
-TextLabel_3.Text = "Blue Lock Rivals"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
 
-ScrollingFrame.Parent = Inf
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-ScrollingFrame.BackgroundTransparency = 1.000
-ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0.147928998, 0, 0.205492452, 0)
-ScrollingFrame.Size = UDim2.new(0.816568077, 0, 0.71369952, 0)
+-- StarterGui.ScreenGui.Home
+G2L["c"] = Instance.new("Frame", G2L["1"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["c"]["Size"] = UDim2.new(0.5129, 0, 0.522, 0);
+G2L["c"]["Position"] = UDim2.new(0.2132, 0, 0.23834, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Name"] = [[Home]];
+G2L["c"]["BackgroundTransparency"] = 1;
 
-UICorner_8.CornerRadius = UDim.new(0, 30)
-UICorner_8.Parent = ScrollingFrame
 
-InfSpinButton.Name = "Inf Spin Button"
-InfSpinButton.Parent = ScrollingFrame
-InfSpinButton.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-InfSpinButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfSpinButton.BorderSizePixel = 0
-InfSpinButton.LayoutOrder = 2
-InfSpinButton.Position = UDim2.new(0.0500000119, 0, 0.031919688, 0)
-InfSpinButton.Size = UDim2.new(0, 496, 0, 52)
+-- StarterGui.ScreenGui.Home.Texteee
+G2L["d"] = Instance.new("Frame", G2L["c"]);
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(84, 84, 84);
+G2L["d"]["Size"] = UDim2.new(0.63166, 0, 0.1244, 0);
+G2L["d"]["Position"] = UDim2.new(0.32692, 0, 0.10766, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Name"] = [[Texteee]];
 
-UICorner_9.CornerRadius = UDim.new(0, 30)
-UICorner_9.Parent = InfSpinButton
 
-TextLabel_4.Parent = InfSpinButton
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0.0376237631, 0, 0, 0)
-TextLabel_4.Size = UDim2.new(0.962376237, 0, 1, 0)
-TextLabel_4.Font = Enum.Font.FredokaOne
-TextLabel_4.Text = "Infinite Spins"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextSize = 50.000
-TextLabel_4.TextWrapped = true
-TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+-- StarterGui.ScreenGui.Home.Texteee.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["CornerRadius"] = UDim.new(0, 20);
 
-ImageButton.Parent = InfSpinButton
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.851485133, 0, 0.116666161, 0)
-ImageButton.Size = UDim2.new(0.0910891071, 0, 0.766666651, 0)
-ImageButton.Image = "http://www.roblox.com/asset/?id=107075188558816"
 
-UICorner_10.CornerRadius = UDim.new(0, 30)
-UICorner_10.Parent = ImageButton
+-- StarterGui.ScreenGui.Home.Texteee.TextLabel
+G2L["f"] = Instance.new("TextLabel", G2L["d"]);
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextSize"] = 14;
+G2L["f"]["TextScaled"] = true;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Size"] = UDim2.new(1, 0, 0.96154, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Position"] = UDim2.new(-0.00095, 0, -0.00294, 0);
 
-CurrentStyle.Name = "Current Style"
-CurrentStyle.Parent = ScrollingFrame
-CurrentStyle.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-CurrentStyle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CurrentStyle.BorderSizePixel = 0
-CurrentStyle.LayoutOrder = -10
-CurrentStyle.Position = UDim2.new(0.0452898555, 0, 0.212222368, 0)
-CurrentStyle.Size = UDim2.new(0, 505, 0, 60)
 
-UICorner_11.CornerRadius = UDim.new(0, 30)
-UICorner_11.Parent = CurrentStyle
+-- StarterGui.ScreenGui.Home.ImageLabel
+G2L["10"] = Instance.new("ImageLabel", G2L["c"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["10"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["10"]["Size"] = UDim2.new(0.14793, 0, 0.23923, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Position"] = UDim2.new(0.14793, 0, 0.05024, 0);
 
-TextLabel_5.Parent = CurrentStyle
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Position = UDim2.new(0.0376237631, 0, 0, 0)
-TextLabel_5.Size = UDim2.new(0.962376237, 0, 1, 0)
-TextLabel_5.Font = Enum.Font.FredokaOne
-TextLabel_5.Text = "Current Style:"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextSize = 50.000
-TextLabel_5.TextWrapped = true
-TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
 
-Frame_3.Parent = ScrollingFrame
-Frame_3.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_3.BorderSizePixel = 0
-Frame_3.LayoutOrder = 9999
-Frame_3.Position = UDim2.new(0.0286960322, 0, -0.00289077335, 0)
-Frame_3.Size = UDim2.new(0.939756513, 0, 0.243858591, 0)
+-- StarterGui.ScreenGui.Home.ImageLabel.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+G2L["11"]["CornerRadius"] = UDim.new(0, 100);
 
-UICorner_12.CornerRadius = UDim.new(0, 30)
-UICorner_12.Parent = Frame_3
 
-TextLabel_6.Parent = Frame_3
-TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.BackgroundTransparency = 1.000
-TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_6.BorderSizePixel = 0
-TextLabel_6.Position = UDim2.new(0.0163043477, 0, 0.116071425, 0)
-TextLabel_6.Size = UDim2.new(0.983695626, 0, 0.8125, 0)
-TextLabel_6.Font = Enum.Font.FredokaOne
-TextLabel_6.Text = "READ BEFORE USE!!  If you did not read this guide I will not help you. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin. If you get kicked for a data error just keep on rejoining."
-TextLabel_6.TextColor3 = Color3.fromRGB(254, 254, 254)
-TextLabel_6.TextSize = 20.000
-TextLabel_6.TextWrapped = true
-TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel_6.TextYAlignment = Enum.TextYAlignment.Top
+-- StarterGui.ScreenGui.Home.ImageLabel.LocalScript
+G2L["12"] = Instance.new("LocalScript", G2L["10"]);
 
-UIAspectRatioConstraint_2.Parent = Frame_3
-UIAspectRatioConstraint_2.AspectRatio = 5.900
 
-UIPadding.Parent = ScrollingFrame
 
-UIGridLayout.Parent = ScrollingFrame
-UIGridLayout.FillDirection = Enum.FillDirection.Vertical
-UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 0, 0.0399999991, 0)
-UIGridLayout.CellSize = UDim2.new(0.899999976, 0, 0.100000001, 0)
-UIGridLayout.StartCorner = Enum.StartCorner.BottomRight
+-- StarterGui.ScreenGui.Home.TextLabel
+G2L["13"] = Instance.new("TextLabel", G2L["c"]);
+G2L["13"]["TextWrapped"] = true;
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextSize"] = 50;
+G2L["13"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["13"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["13"]["TextScaled"] = true;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["BackgroundTransparency"] = 1;
+G2L["13"]["RichText"] = true;
+G2L["13"]["Size"] = UDim2.new(0.76183, 0, 0.56787, 0);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[Hi! \n e]];
+G2L["13"]["Position"] = UDim2.new(0.17751, 0, 0.32057, 0);
 
-Rejoin.Name = "Rejoin"
-Rejoin.Parent = ScrollingFrame
-Rejoin.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-Rejoin.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Rejoin.BorderSizePixel = 0
-Rejoin.Position = UDim2.new(0.0499999784, 0, 0.337089062, 0)
-Rejoin.Size = UDim2.new(0, 496, 0, 87)
-Rejoin.Font = Enum.Font.FredokaOne
-Rejoin.Text = "  Rejoin"
-Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
-Rejoin.TextSize = 50.000
-Rejoin.TextWrapped = true
-Rejoin.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_13.CornerRadius = UDim.new(0, 30)
-UICorner_13.Parent = Rejoin
+-- StarterGui.ScreenGui.Inf
+G2L["14"] = Instance.new("Frame", G2L["1"]);
+G2L["14"]["Visible"] = false;
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(55, 55, 55);
+G2L["14"]["Size"] = UDim2.new(0.5129, 0, 0.522, 0);
+G2L["14"]["Position"] = UDim2.new(0.2132, 0, 0.23834, 0);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Name"] = [[Inf]];
+G2L["14"]["BackgroundTransparency"] = 1;
 
-NormalSpinStyle.Name = "Normal Spin Style"
-NormalSpinStyle.Parent = ScrollingFrame
-NormalSpinStyle.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-NormalSpinStyle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NormalSpinStyle.BorderSizePixel = 0
-NormalSpinStyle.LayoutOrder = -1
-NormalSpinStyle.Position = UDim2.new(0.0499999784, 0, 0.337089062, 0)
-NormalSpinStyle.Size = UDim2.new(0, 496, 0, 87)
-NormalSpinStyle.Font = Enum.Font.FredokaOne
-NormalSpinStyle.Text = "Normal Spin Style"
-NormalSpinStyle.TextColor3 = Color3.fromRGB(255, 255, 255)
-NormalSpinStyle.TextSize = 50.000
-NormalSpinStyle.TextWrapped = true
-NormalSpinStyle.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_14.CornerRadius = UDim.new(0, 30)
-UICorner_14.Parent = NormalSpinStyle
+-- StarterGui.ScreenGui.Inf.Frame
+G2L["15"] = Instance.new("Frame", G2L["14"]);
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(104, 104, 104);
+G2L["15"]["Size"] = UDim2.new(0.81657, 0, 0.12816, 0);
+G2L["15"]["Position"] = UDim2.new(0.14793, 0, 0.04861, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-LuckySpinStyle.Name = "Lucky Spin Style"
-LuckySpinStyle.Parent = ScrollingFrame
-LuckySpinStyle.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-LuckySpinStyle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LuckySpinStyle.BorderSizePixel = 0
-LuckySpinStyle.LayoutOrder = -2
-LuckySpinStyle.Position = UDim2.new(0.0499999784, 0, 0.337089062, 0)
-LuckySpinStyle.Size = UDim2.new(0, 496, 0, 87)
-LuckySpinStyle.Font = Enum.Font.FredokaOne
-LuckySpinStyle.Text = "Lucky Spin Style"
-LuckySpinStyle.TextColor3 = Color3.fromRGB(255, 255, 255)
-LuckySpinStyle.TextSize = 50.000
-LuckySpinStyle.TextWrapped = true
-LuckySpinStyle.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_15.CornerRadius = UDim.new(0, 30)
-UICorner_15.Parent = LuckySpinStyle
+-- StarterGui.ScreenGui.Inf.Frame.UICorner
+G2L["16"] = Instance.new("UICorner", G2L["15"]);
+G2L["16"]["CornerRadius"] = UDim.new(0, 30);
 
-UIAspectRatioConstraint_3.Parent = Inf
-UIAspectRatioConstraint_3.AspectRatio = 1.540
 
--- Scripts:
+-- StarterGui.ScreenGui.Inf.Frame.TextLabel
+G2L["17"] = Instance.new("TextLabel", G2L["15"]);
+G2L["17"]["TextWrapped"] = true;
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["TextSize"] = 14;
+G2L["17"]["TextScaled"] = true;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["17"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["BackgroundTransparency"] = 1;
+G2L["17"]["Size"] = UDim2.new(0.99819, 0, 0.86207, 0);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Text"] = [[Blue Lock Rivals]];
+G2L["17"]["Position"] = UDim2.new(0, 0, 0.06897, 0);
 
-local function XNOOT_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
 
+-- StarterGui.ScreenGui.Inf.ScrollingFrame
+G2L["18"] = Instance.new("ScrollingFrame", G2L["14"]);
+G2L["18"]["Active"] = true;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["18"]["ScrollBarImageTransparency"] = 1;
+G2L["18"]["Size"] = UDim2.new(0.81657, 0, 0.7137, 0);
+G2L["18"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Position"] = UDim2.new(0.14793, 0, 0.20549, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["18"]);
+G2L["19"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button
+G2L["1a"] = Instance.new("Frame", G2L["18"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["1a"]["Size"] = UDim2.new(0, 496, 0, 52);
+G2L["1a"]["Position"] = UDim2.new(0.05, 0, 0.03192, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Name"] = [[Inf Spin Button]];
+G2L["1a"]["LayoutOrder"] = 2;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.UICorner
+G2L["1b"] = Instance.new("UICorner", G2L["1a"]);
+G2L["1b"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.TextLabel
+G2L["1c"] = Instance.new("TextLabel", G2L["1a"]);
+G2L["1c"]["TextWrapped"] = true;
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextSize"] = 50;
+G2L["1c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["BackgroundTransparency"] = 1;
+G2L["1c"]["Size"] = UDim2.new(0.96238, 0, 1, 0);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[Infinite Spins]];
+G2L["1c"]["Position"] = UDim2.new(0.03762, 0, 0, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.ImageButton
+G2L["1d"] = Instance.new("ImageButton", G2L["1a"]);
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["Image"] = [[http://www.roblox.com/asset/?id=107075188558816]];
+G2L["1d"]["Size"] = UDim2.new(0.09109, 0, 0.76667, 0);
+G2L["1d"]["BackgroundTransparency"] = 1;
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Position"] = UDim2.new(0.85149, 0, 0.11667, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.ImageButton.UICorner
+G2L["1e"] = Instance.new("UICorner", G2L["1d"]);
+G2L["1e"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.ImageButton.LocalScript
+G2L["1f"] = Instance.new("LocalScript", G2L["1d"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style
+G2L["20"] = Instance.new("Frame", G2L["18"]);
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["20"]["Size"] = UDim2.new(0, 505, 0, 60);
+G2L["20"]["Position"] = UDim2.new(0.04529, 0, 0.21222, 0);
+G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["Name"] = [[Current Style]];
+G2L["20"]["LayoutOrder"] = -10;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style.UICorner
+G2L["21"] = Instance.new("UICorner", G2L["20"]);
+G2L["21"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style.TextLabel
+G2L["22"] = Instance.new("TextLabel", G2L["20"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["TextSize"] = 50;
+G2L["22"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["22"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["BackgroundTransparency"] = 1;
+G2L["22"]["Size"] = UDim2.new(0.96238, 0, 1, 0);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Text"] = [[Current Style:]];
+G2L["22"]["Position"] = UDim2.new(0.03762, 0, 0, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style.TextLabel.LocalScript
+G2L["23"] = Instance.new("LocalScript", G2L["22"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Frame
+G2L["24"] = Instance.new("Frame", G2L["18"]);
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
+G2L["24"]["Size"] = UDim2.new(0.93976, 0, 0.24386, 0);
+G2L["24"]["Position"] = UDim2.new(0.0287, 0, -0.00289, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["LayoutOrder"] = 9999;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Frame.UICorner
+G2L["25"] = Instance.new("UICorner", G2L["24"]);
+G2L["25"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Frame.TextLabel
+G2L["26"] = Instance.new("TextLabel", G2L["24"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextSize"] = 20;
+G2L["26"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["26"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["BackgroundTransparency"] = 1;
+G2L["26"]["RichText"] = true;
+G2L["26"]["Size"] = UDim2.new(0.9837, 0, 0.8125, 0);
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[READ BEFORE USE!!  If you did not read this guide I will not help you. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin. If you get kicked for a data error just keep on rejoining.]];
+G2L["26"]["Position"] = UDim2.new(0.0163, 0, 0.11607, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Frame.UIAspectRatioConstraint
+G2L["27"] = Instance.new("UIAspectRatioConstraint", G2L["24"]);
+G2L["27"]["AspectRatio"] = 5.9;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.UIPadding
+G2L["28"] = Instance.new("UIPadding", G2L["18"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.UIGridLayout
+G2L["29"] = Instance.new("UIGridLayout", G2L["18"]);
+G2L["29"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["29"]["CellSize"] = UDim2.new(0.9, 0, 0.1, 0);
+G2L["29"]["StartCorner"] = Enum.StartCorner.BottomRight;
+G2L["29"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["29"]["CellPadding"] = UDim2.new(0, 0, 0.04, 0);
+G2L["29"]["FillDirection"] = Enum.FillDirection.Vertical;
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Rejoin
+G2L["2a"] = Instance.new("TextButton", G2L["18"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2a"]["TextSize"] = 50;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["Size"] = UDim2.new(0, 496, 0, 87);
+G2L["2a"]["Name"] = [[Rejoin]];
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[  Rejoin]];
+G2L["2a"]["Position"] = UDim2.new(0.05, 0, 0.33709, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Rejoin.UICorner
+G2L["2b"] = Instance.new("UICorner", G2L["2a"]);
+G2L["2b"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Rejoin.LocalScript
+G2L["2c"] = Instance.new("LocalScript", G2L["2a"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Normal Spin Style
+G2L["2d"] = Instance.new("TextButton", G2L["18"]);
+G2L["2d"]["TextWrapped"] = true;
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2d"]["TextSize"] = 50;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2d"]["Size"] = UDim2.new(0, 496, 0, 87);
+G2L["2d"]["LayoutOrder"] = -1;
+G2L["2d"]["Name"] = [[Normal Spin Style]];
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Text"] = [[Normal Spin Style]];
+G2L["2d"]["Position"] = UDim2.new(0.05, 0, 0.33709, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Normal Spin Style.UICorner
+G2L["2e"] = Instance.new("UICorner", G2L["2d"]);
+G2L["2e"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Normal Spin Style.LocalScript
+G2L["2f"] = Instance.new("LocalScript", G2L["2d"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Lucky Spin Style
+G2L["30"] = Instance.new("TextButton", G2L["18"]);
+G2L["30"]["TextWrapped"] = true;
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["30"]["TextSize"] = 50;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["30"]["Size"] = UDim2.new(0, 496, 0, 87);
+G2L["30"]["LayoutOrder"] = -2;
+G2L["30"]["Name"] = [[Lucky Spin Style]];
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["Text"] = [[Lucky Spin Style]];
+G2L["30"]["Position"] = UDim2.new(0.05, 0, 0.33709, 0);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Lucky Spin Style.UICorner
+G2L["31"] = Instance.new("UICorner", G2L["30"]);
+G2L["31"]["CornerRadius"] = UDim.new(0, 30);
+
+
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Lucky Spin Style.LocalScript
+G2L["32"] = Instance.new("LocalScript", G2L["30"]);
+
+
+
+-- StarterGui.ScreenGui.Inf.UIAspectRatioConstraint
+G2L["33"] = Instance.new("UIAspectRatioConstraint", G2L["14"]);
+G2L["33"]["AspectRatio"] = 1.54;
+
+
+-- StarterGui.ScreenGui.Main.Frame.LocalScript
+local function C_5()
+local script = G2L["5"];
 	local tabs = {
 		Home = script.Parent.Parent.Parent.Home,
 		Inf = script.Parent.Parent.Parent.Inf
@@ -398,11 +484,11 @@ local function XNOOT_fake_script() -- Frame.LocalScript
 	script.Parent.SpinButton.Activated:Connect(function()
 		switchTab("Inf")
 	end)
-end
-coroutine.wrap(XNOOT_fake_script)()
-local function DURW_fake_script() -- ImageLabel.LocalScript 
-	local script = Instance.new('LocalScript', ImageLabel)
-
+end;
+task.spawn(C_5);
+-- StarterGui.ScreenGui.Home.ImageLabel.LocalScript
+local function C_12()
+local script = G2L["12"];
 	local player = game.Players.LocalPlayer 
 	
 	local userid = player.UserId
@@ -413,11 +499,11 @@ local function DURW_fake_script() -- ImageLabel.LocalScript
 	script.Parent.Image = content
 	script.Parent.Parent.Texteee.TextLabel.Text = player.Name
 	script.Parent.Parent.TextLabel.Text = string.format("Hello %s! Welcome to SEV Hub! created by the one and only 4bigguys445 on discord \nThis hub supports only one game as of now: Blue lock rivals! Equipped with overpowered and wanted features! Such as: \n-Infinite Spins \n", player.Name)
-end
-coroutine.wrap(DURW_fake_script)()
-local function LYDZ_fake_script() -- ImageButton.LocalScript 
-	local script = Instance.new('LocalScript', ImageButton)
-
+end;
+task.spawn(C_12);
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Inf Spin Button.ImageButton.LocalScript
+local function C_1f()
+local script = G2L["1f"];
 	local ee = false
 	
 	script.Parent.Activated:Connect(function()
@@ -443,37 +529,37 @@ local function LYDZ_fake_script() -- ImageButton.LocalScript
 			game:GetService("ReplicatedStorage").Packages.Knit.Services.CustomizationService.RE.Customize:FireServer(unpack(args))
 		end
 	end)
-end
-coroutine.wrap(LYDZ_fake_script)()
-local function TBDA_fake_script() -- TextLabel_5.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel_5)
-
+end;
+task.spawn(C_1f);
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style.TextLabel.LocalScript
+local function C_23()
+local script = G2L["23"];
 	script.Parent.Text = "Current Style: "..game:GetService("Players").LocalPlayer.PlayerStats.Style
 	game:GetService("Players").LocalPlayer.PlayerStats.Style.Changed:Connect(function(value)
 		script.Parent.Text = string.format("Current Style: %s", value)
 	end)
-end
-coroutine.wrap(TBDA_fake_script)()
-local function IBRZL_fake_script() -- Rejoin.LocalScript 
-	local script = Instance.new('LocalScript', Rejoin)
-
+end;
+task.spawn(C_23);
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Rejoin.LocalScript
+local function C_2c()
+local script = G2L["2c"];
 	script.Parent.Activated:Connect(function()
 		local ts = game:GetService("TeleportService")
 		ts:Teleport(game.PlaceId, game.Players.LocalPlayer)
 	end)
-end
-coroutine.wrap(IBRZL_fake_script)()
-local function RHPSWGZ_fake_script() -- NormalSpinStyle.LocalScript 
-	local script = Instance.new('LocalScript', NormalSpinStyle)
-
+end;
+task.spawn(C_2c);
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Normal Spin Style.LocalScript
+local function C_2f()
+local script = G2L["2f"];
 	script.Parent.Activated:Connect(function()
 		game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
 	end)
-end
-coroutine.wrap(RHPSWGZ_fake_script)()
-local function VINEAFY_fake_script() -- LuckySpinStyle.LocalScript 
-	local script = Instance.new('LocalScript', LuckySpinStyle)
-
+end;
+task.spawn(C_2f);
+-- StarterGui.ScreenGui.Inf.ScrollingFrame.Lucky Spin Style.LocalScript
+local function C_32()
+local script = G2L["32"];
 	script.Parent.Activated:Connect(function()
 		local args = {
 			[1] = true
@@ -481,5 +567,7 @@ local function VINEAFY_fake_script() -- LuckySpinStyle.LocalScript
 	
 		game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(unpack(args))
 	end)
-end
-coroutine.wrap(VINEAFY_fake_script)()
+end;
+task.spawn(C_32);
+
+return G2L["1"], require;
