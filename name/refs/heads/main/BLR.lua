@@ -535,9 +535,9 @@ task.spawn(C_1f);
 -- StarterGui.ScreenGui.Inf.ScrollingFrame.Current Style.TextLabel.LocalScript
 local function C_23()
 local script = G2L["23"];
-	script.Parent.Text = string.format("Current Style: %s", game:GetService("Players").LocalPlayer.PlayerStats.Style.Value)
+	script.Parent.Text = string.format("%s", game:GetService("Players").LocalPlayer.PlayerStats.Style.Value)
 	game:GetService("Players").LocalPlayer.PlayerStats.Style.Changed:Connect(function(value)
-		script.Parent.Text = string.format("Current Style: %s", value)
+		script.Parent.Text = string.format("%s", value)
 	end)
 end;
 task.spawn(C_23);
