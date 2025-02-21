@@ -102,14 +102,14 @@ end)
 local FlowSection = Tab:CreateSection("Flow")
 
 local NormalF = Tab:CreateButton({
-   Name = "Normal Style Spin",
+   Name = "Normal Flow Spin",
    Callback = function()
    	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer()
    end,
 })
 
 local LuckyF = Tab:CreateButton({
-   Name = "Lucky Style Spin",
+   Name = "Lucky Flow Spin",
    Callback = function()
    	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer(true)
    end,
