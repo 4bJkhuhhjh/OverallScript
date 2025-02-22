@@ -156,7 +156,7 @@ end)
 
 local Tab2 = Window:CreateTab("Gameplay", 0)
 
-local NoCd = Tab:CreateToggle({
+local NoCd = Tab2:CreateToggle({
    Name = "Infinite Spin",
    CurrentValue = false,
    Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -166,7 +166,7 @@ local NoCd = Tab:CreateToggle({
    end,
 })
 
-local Toggle2 = Tab:CreateToggle({
+local Toggle2 = Tab2:CreateToggle({
    Name = "Infinite Stamina",
    CurrentValue = false,
    Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
