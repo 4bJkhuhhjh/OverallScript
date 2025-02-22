@@ -73,19 +73,14 @@ function nocd()
 end
 
 function infstamina()
-local stam = game:GetService("Players").LocalPlayer.PlayerStats.Stamina
-local originalIndex = hookmetamethod(game, "__index", function(...) return ... end)
-	if _G.InfStamina == true then
+		local stam = game:GetService("Players").LocalPlayer.PlayerStats.Stamina
 		local stamh;
 		stamh = hookmetamethod(game, "__index", function(self,v)
-			if self == stam and v == "Value" then
+			if self == stam and v == "Value" and _G.InfStamina == true then
 				return 9e9
 			end
 		return stamh(self, v)
 		end)
-	else
-		hookmetamethod(game, "__index", originalIndex)
-	end
 end
 
 local Tab = Window:CreateTab("Main", 109306454828475) -- Title, Image
