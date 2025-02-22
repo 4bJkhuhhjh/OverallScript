@@ -35,6 +35,8 @@ local Window = Rayfield:CreateWindow({
 })
 
 _G.InfSpin = false
+_G.NoCD = false
+_G.InfStamina = false
 
 function infspin()
 	if _G.InfSpin == false then
@@ -55,6 +57,37 @@ game:GetService("ReplicatedStorage").Packages.Knit.Services.CustomizationService
 game:GetService("ReplicatedStorage").Packages.Knit.Services.CustomizationService.RE.Customize:FireServer(unpack(args))
 end
 end
+
+function nocd()
+	if _G.NoCD == true then
+		local Mod = require(game.ReplicatedStorage.Controllers.AbilityController)
+		local abilitycool = Mod.AbilityCooldown
+		local old; old = hookfunction(abilitycool, function(...)
+    		return nil
+	end)
+	else
+		local Mod = require(game.ReplicatedStorage.Controllers.AbilityController)
+		local abilitycool = Mod.AbilityCooldown
+		hookfunction(abilitycool, abilitycool)
+	end
+end
+
+function infstamina()
+local stam = game:GetService("Players").LocalPlayer.PlayerStats.Stamina
+local originalIndex = hookmetamethod(game, "__index", function(...) return ... end)
+	if _G.InfStamina == true then
+		local stamh;
+		stamh = hookmetamethod(game, "__index", function(self,v)
+			if self == stam and v == "Value" then
+				return 9e9
+			end
+		return stamh(self, v)
+		end)
+	else
+		hookmetamethod(game, "__index", originalIndex)
+	end
+end
+
 local Tab = Window:CreateTab("Main", 109306454828475) -- Title, Image
 
 local Paragraph = Tab:CreateParagraph({Title = "READ ME", Content = "READ BEFORE USE!! If you do not read this guide I will not help you. This script rollsback data so it is not specifically 'Infinite spins'. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin after using all spins. If you get kicked for a data error just keep on rejoining."})
@@ -120,3 +153,25 @@ local Label = Tab:CreateLabel(game:GetService("Players").LocalPlayer.PlayerStats
 game:GetService("Players").LocalPlayer.PlayerStats.Flow.Changed:Connect(function(newval)
 	Label:Set(newval,4483362458, Color3.fromRGB(100, 100, 100), false) -- Title, Icon, Color, IgnoreTheme
 end)
+
+local Tab2 = Window:CreateTab("Gameplay", 0)
+
+local NoCd = Tab:CreateToggle({
+   Name = "Infinite Spin",
+   CurrentValue = false,
+   Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		_G.NoCD = Value
+		nocd()
+   end,
+})
+
+local Toggle2 = Tab:CreateToggle({
+   Name = "Infinite Stamina",
+   CurrentValue = false,
+   Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		_G.InfStamina = Value
+		infstamina()
+   end,
+})
