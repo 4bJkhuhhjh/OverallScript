@@ -152,7 +152,7 @@ end)
 local Eee = Window:CreateTab("Gameplay", 0)
 
 local NoCd = Eee:CreateToggle({
-   Name = "No CoolDown",
+   Name = "No Cooldown",
    CurrentValue = false,
    Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
@@ -161,7 +161,7 @@ local NoCd = Eee:CreateToggle({
    end,
 })
 
-local Toggle2 = Eee:CreateToggle({
+local InfStamina = Eee:CreateToggle({
    Name = "Infinite Stamina",
    CurrentValue = false,
    Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
