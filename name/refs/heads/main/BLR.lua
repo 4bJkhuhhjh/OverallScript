@@ -37,6 +37,8 @@ local Window = Rayfield:CreateWindow({
 _G.InfSpin = false
 _G.NoCD = false
 _G.InfStamina = false
+_G.PowerBool = false
+_G.Power = 110
 
 function infspin()
 	if _G.InfSpin == false then
@@ -81,6 +83,21 @@ function infstamina()
 			end
 		return stamh(self, v)
 		end)
+end
+
+function Powaaa()
+	local shothook
+shothook = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+
+    -- Ensure it only intercepts the correct remote event
+    if self.Name == "Shoot" and method == "FireServer" and _G.PowerBool == true then 
+        return shothook(self, _G.Power) -- Call the original function with modified args
+    end
+
+    return shothook(self, unpack(args)) -- Call the original function normally
+end)
 end
 
 local Tab = Window:CreateTab("Main", 109306454828475) -- Title, Image
@@ -168,5 +185,27 @@ local InfStamina = Eee:CreateToggle({
    Callback = function(Value)
 		_G.InfStamina = Value
 		infstamina()
+   end,
+})
+
+local PowerShot = Eee:CreateToggle({
+   Name = "Power Shot",
+   CurrentValue = false,
+   Flag = "Toggle4", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		_G.PowerBool = Value
+		Powaaa()
+   end,
+})
+
+local Slider = Eee:CreateSlider({
+   Name = "Power Shoot",
+   Range = {0, 9999},
+   Increment = 10,
+   Suffix = "Changes the power of your shot, a fully charged kick is 110",
+   CurrentValue = 110,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   	_G.Power = Value
    end,
 })
