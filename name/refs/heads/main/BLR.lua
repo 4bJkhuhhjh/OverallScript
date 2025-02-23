@@ -200,9 +200,9 @@ local PowerShot = Eee:CreateToggle({
 
 local Slider = Eee:CreateSlider({
    Name = "Power Shoot",
-   Range = {0, 9999},
+   Range = {0, 999},
    Increment = 10,
-   Suffix = "Changes the power of your shot, a fully charged kick is 110",
+   Suffix = "",
    CurrentValue = 110,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
