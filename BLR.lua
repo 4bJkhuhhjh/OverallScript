@@ -104,7 +104,7 @@ end
 
 function AutoSpin()
 	while _G.AutoSpin == true do
-		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value)then
+		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value) then
 			_G.AutoSpin = false
 			infspin()
 			break
