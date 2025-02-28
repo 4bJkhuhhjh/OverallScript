@@ -131,7 +131,7 @@ local Desired = Tab:CreateDropdown({
 local AutoSpinInf = AutoSpinTab:CreateToggle({
 	Name = "Auto Spin Style",
 	CurrentValue = false,
-	Flag = "AutoSpin"
+	Flag = "AutoSpin",
 	Callback = function(Value)
 	infspin()
 	_G.AutoSpin = Value
