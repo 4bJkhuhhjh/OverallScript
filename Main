@@ -16,7 +16,7 @@ if gameScripts[gameID] then
 
     -- Fetch and execute the script
     local scriptContent = game:HttpGet(scriptURL)
-    loadstring(scriptContent)()
+    loadstring(game:HttpGet(hh .. gameScript[gameID)()
 else
     print("Game ID not found in the script table.")
 end
