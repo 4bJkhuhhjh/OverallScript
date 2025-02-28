@@ -127,14 +127,14 @@ local StyleSection = Tab:CreateSection("Style")
 local NormalS = Tab:CreateButton({
    Name = "Normal Style Spin",
    Callback = function()
-   	game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
+		game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
    end,
 })
 
 local LuckyS = Tab:CreateButton({
    Name = "Lucky Style Spin",
    Callback = function()
-   	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer(trie)
+   	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer(true)
    end,
 })
 
