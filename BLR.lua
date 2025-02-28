@@ -108,7 +108,7 @@ function AutoSpin()
 			_G.AutoSpin = false
 			infspin()
 else
-wait(0.1)
+wait(1)
 game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
 game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
 		end
