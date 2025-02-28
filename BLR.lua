@@ -102,19 +102,7 @@ shothook = hookmetamethod(game, "__namecall", function(self, ...)
 end)
 end
 
-function AutoSpin()
-	while _G.AutoSpin == true do
-		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value) then
-			_G.AutoSpin = false
-			infspin()
-		AutoSpinInf:Set(false)
-else
-wait(1)
-game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
-game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
-		end
-	end
-end
+
 
 local AutoSpinTab = Window:CreateTab("AutoSpin", 0)
 local Tab = Window:CreateTab("Main", 0)
@@ -136,13 +124,30 @@ local AutoSpinInf = AutoSpinTab:CreateToggle({
 	CurrentValue = false,
 	Flag = "AutoSpin",
 	Callback = function(Value)
-	infspin()
+	if Value == true then
+infspin()
 	_G.AutoSpin = Value
 	AutoSpin()
 	_G.InfSpin = Value
+end
+	
 end,
 
 })
+
+function AutoSpin()
+	while _G.AutoSpin == true do
+		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value) then
+		AutoSpinInf:Set(false)
+		break
+else
+wait(1)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
+		end
+	end
+end
+
 -------------------------------------------- MAIN TAB ---------------------------------------
 local Paragraph = Tab:CreateParagraph({Title = "READ ME", Content = "READ BEFORE USE!! If you do not read this guide I will not help you. This script rollsback data so it is not specifically 'Infinite spins'. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin after using all spins. If you get kicked for a data error just keep on rejoining."})
 
