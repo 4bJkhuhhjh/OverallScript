@@ -103,14 +103,28 @@ end)
 end
 
 function AutoSpin()
+	local args ={
+    [1]="Emotes",
+    [2] = "HypeHype\255",
+    [3] = "3"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.CustomizationService.RE.Customize:FireServer(unpack(args))
 	while _G.AutoSpin == true do
 		if _G.DesiredStyle[game:GetService("Players").LocalPlayer.PlayerStats.Style.Value] then
 			_G.AutoSpin = false
+			local args ={
+    [1]="Emotes",
+    [2] = "HypeHype",
+    [3] = "3"
+}
+
+game:GetService("ReplicatedStorage").Packages.Knit.Services.CustomizationService.RE.Customize:FireServer(unpack(args))
 			break
 		end
 		wait(0.1)
-	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer()
-game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer(true)
+	game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
 	end
 end
 
