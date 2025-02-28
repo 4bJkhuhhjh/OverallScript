@@ -39,6 +39,8 @@ _G.NoCD = false
 _G.InfStamina = false
 _G.PowerBool = false
 _G.Power = 110
+_G.AutoSpin = false
+_G.DesiredStyle = {"Isagi",}
 
 function infspin()
 	if _G.InfSpin == false then
@@ -100,8 +102,45 @@ shothook = hookmetamethod(game, "__namecall", function(self, ...)
 end)
 end
 
-local Tab = Window:CreateTab("Main", 109306454828475) -- Title, Image
+function AutoSpin()
+	while _G.AutoSpin == true do
+		if _G.DesiredStyle[game:GetService("Players").LocalPlayer.PlayerStats.Style.Value] then
+			_G.AutoSpin = false
+			break
+		end
+		wait(0.1)
+	game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer()
+game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:FireServer(true)
+	end
+end
 
+local AutoSpinTab = Window:CreateTab("AutoSpin", 0)
+local Eee = Window:CreateTab("Gameplay", 0)
+local Eee = Window:CreateTab("Gameplay", 0)
+------------------------------------------ AUTOSPIN TAB -------------------------------------
+local Desired = Tab:CreateDropdown({
+   Name = "Desired Style",
+   Options = {"Isagi", "Chigiri", "Bachira", "Otoya", "Hiori", "Gagamaru", "King", "Nagi", "Reo", "Karasu", "Shidou", "Yukimiya", "Sae", "Aiku", "Rin", "Kunigami"},
+   CurrentOption = {"Isagi"},
+   MultipleOptions = false,
+   Flag = "Desired Style", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Options)
+   	_G.DesiredStyle = Options
+   end,
+})
+local AutoSpinInf = AutoSpinTab:CreateToggle({
+	Name = "Auto Spin Style",
+	CurrentValue = false,
+	Flag = "AutoSpin"
+	Callback = function(Value)
+	infspin()
+	_G.AutoSpin = Value
+	AutoSpin()
+	_G.InfSpin = Value
+end
+
+})
+-------------------------------------------- MAIN TAB ---------------------------------------
 local Paragraph = Tab:CreateParagraph({Title = "READ ME", Content = "READ BEFORE USE!! If you do not read this guide I will not help you. This script rollsback data so it is not specifically 'Infinite spins'. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin after using all spins. If you get kicked for a data error just keep on rejoining."})
 
 local Toggle = Tab:CreateToggle({
@@ -165,9 +204,7 @@ local Label = Tab:CreateLabel(game:GetService("Players").LocalPlayer.PlayerStats
 game:GetService("Players").LocalPlayer.PlayerStats.Flow.Changed:Connect(function(newval)
 	Label:Set(newval,4483362458, Color3.fromRGB(100, 100, 100), false) -- Title, Icon, Color, IgnoreTheme
 end)
-
-local Eee = Window:CreateTab("Gameplay", 0)
-
+------------------------------------------- GAMEPLAY TAB ---------------------------------------
 local NoCd = Eee:CreateToggle({
    Name = "No Cooldown",
    CurrentValue = false,
