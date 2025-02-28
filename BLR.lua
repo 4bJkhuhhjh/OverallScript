@@ -104,7 +104,7 @@ end
 
 function AutoSpin()
 	while _G.AutoSpin == true do
-		if _G.DesiredStyle[game:GetService("Players").LocalPlayer.PlayerStats.Style.Value] then
+		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value)then
 			_G.AutoSpin = false
 			infspin()
 			break
@@ -123,7 +123,7 @@ local Desired = AutoSpinTab:CreateDropdown({
    Name = "Desired Style",
    Options = {"Isagi", "Chigiri", "Bachira", "Otoya", "Hiori", "Gagamaru", "King", "Nagi", "Reo", "Karasu", "Shidou", "Yukimiya", "Sae", "Aiku", "Rin", "Kunigami"},
    CurrentOption = {"Isagi"},
-   MultipleOptions = false,
+   MultipleOptions = true,
    Flag = "Desired Style", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Options)
    	_G.DesiredStyle = Options
