@@ -127,7 +127,7 @@ local Desired = AutoSpinTab:CreateDropdown({
    Flag = "Desired Style", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Options)
    	_G.DesiredStyle = Options
-		print(Options)
+		print("e", Options)
    end,
 })
 local AutoSpinInf = AutoSpinTab:CreateToggle({
