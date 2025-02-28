@@ -9,14 +9,6 @@ local hh = "https://raw.githubusercontent.com/4bJkhuhhjh/OverallScript/refs/head
 -- Get the current game's ID
 local gameID = game.GameId
 
--- Check if the gameID exists in the dictionary
-if gameScripts[gameID] then
-    -- Construct the full URL
-    --local scriptURL = hh .. gameScripts[gameID]
-
-    -- Fetch and execute the script
-    --local scriptContent = game:HttpGet(scriptURL)
-    loadstring(game:HttpGet(hh .. gameScripts[gameID]))()
-else
-    print("Game ID not found in the script table.")
+if gameID == 6325068386 then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/4bJkhuhhjh/OverallScript/refs/heads/main/BLR.lua"))()
 end
