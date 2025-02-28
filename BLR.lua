@@ -137,7 +137,7 @@ local AutoSpinInf = AutoSpinTab:CreateToggle({
 	_G.AutoSpin = Value
 	AutoSpin()
 	_G.InfSpin = Value
-end
+end,
 
 })
 -------------------------------------------- MAIN TAB ---------------------------------------
