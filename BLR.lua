@@ -107,11 +107,11 @@ function AutoSpin()
 		if table.find(_G.DesiredStyle, game:GetService("Players").LocalPlayer.PlayerStats.Style.Value) then
 			_G.AutoSpin = false
 			infspin()
-			break
-		end
-		wait(0.1)
-	game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
+else
+wait(0.1)
+game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer()
 game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
+		end
 	end
 end
 
