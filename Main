@@ -1,0 +1,22 @@
+-- Define the dictionary with game IDs as keys and script names as values
+local gameScripts = {
+    [18668065416] = "BLR.lua",  -- Replace with actual GameID and script names
+}
+
+-- Base URL for script storage
+local hh = "https://raw.githubusercontent.com/4bJkhuhhjh/OverallScript/refs/heads/main/"
+
+-- Get the current game's ID
+local gameID = game.GameId
+
+-- Check if the gameID exists in the dictionary
+if gameScripts[gameID] then
+    -- Construct the full URL
+    local scriptURL = hh .. gameScripts[gameID]
+
+    -- Fetch and execute the script
+    local scriptContent = game:HttpGet(scriptURL)
+    loadstring(scriptContent)()
+else
+    print("Game ID not found in the script table.")
+end
