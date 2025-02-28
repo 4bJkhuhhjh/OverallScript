@@ -115,10 +115,10 @@ game:GetService("ReplicatedStorage").Packages.Knit.Services.FlowService.RE.Spin:
 end
 
 local AutoSpinTab = Window:CreateTab("AutoSpin", 0)
-local Eee = Window:CreateTab("Gameplay", 0)
 local Tab = Window:CreateTab("Main", 0)
+local Eee = Window:CreateTab("Gameplay", 0)
 ------------------------------------------ AUTOSPIN TAB -------------------------------------
---[[local Desired = Tab:CreateDropdown({
+local Desired = AutoSpinTab:CreateDropdown({
    Name = "Desired Style",
    Options = {"Isagi", "Chigiri", "Bachira", "Otoya", "Hiori", "Gagamaru", "King", "Nagi", "Reo", "Karasu", "Shidou", "Yukimiya", "Sae", "Aiku", "Rin", "Kunigami"},
    CurrentOption = {"Isagi"},
@@ -127,7 +127,7 @@ local Tab = Window:CreateTab("Main", 0)
    Callback = function(Options)
    	_G.DesiredStyle = Options
    end,
-})]]
+})
 local AutoSpinInf = AutoSpinTab:CreateToggle({
 	Name = "Auto Spin Style",
 	CurrentValue = false,
