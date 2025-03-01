@@ -105,7 +105,7 @@ end
 
 
 local AutoSpinTab = Window:CreateTab("AutoSpin", "book-open")
-local Tab = Window:CreateTab("Main", "house")
+local Tab = Window:CreateTab("Main", 0)
 local Eee = Window:CreateTab("Gameplay", "gamepad-2")
 ------------------------------------------ AUTOSPIN TAB -------------------------------------
 local Desired = AutoSpinTab:CreateDropdown({
