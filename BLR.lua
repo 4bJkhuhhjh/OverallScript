@@ -104,11 +104,11 @@ end
 
 
 
-local AutoSpinTab = Window:CreateTab("AutoSpin", "book-open")
+--local AutoSpinTab = Window:CreateTab("AutoSpin", "book-open")
 local Tab = Window:CreateTab("Main", 0)
 local Eee = Window:CreateTab("Gameplay", "gamepad-2")
 ------------------------------------------ AUTOSPIN TAB -------------------------------------
-local Desired = AutoSpinTab:CreateDropdown({
+--[[local Desired = AutoSpinTab:CreateDropdown({
    Name = "Desired Style",
    Options = {"Isagi", "Chigiri", "Bachira", "Otoya", "Hiori", "Gagamaru", "King", "Nagi", "Reo", "Karasu", "Shidou", "Yukimiya", "Sae", "Aiku", "Rin", "Kunigami"},
    CurrentOption = {"Isagi"},
@@ -146,7 +146,7 @@ game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin
 game:GetService("ReplicatedStorage").Packages.Knit.Services.StyleService.RE.Spin:FireServer(true)
 		end
 	end
-end
+end]]
 
 -------------------------------------------- MAIN TAB ---------------------------------------
 local Paragraph = Tab:CreateParagraph({Title = "READ ME", Content = "READ BEFORE USE!! If you do not read this guide I will not help you. This script rollsback data so it is not specifically 'Infinite spins'. You need to turn off infinite spins after getting your desired style if not, keep it on and rejoin after using all spins. If you get kicked for a data error just keep on rejoining."})
