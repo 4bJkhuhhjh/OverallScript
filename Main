@@ -1,6 +1,7 @@
 -- Define the dictionary with game IDs as keys and script names as values
 local gameScripts = {
-    [6325068386] = "BLR.lua",  -- Replace with actual GameID and script names
+    [6325068386] = "BLR.lua",
+    [8075399143] = "NinjaTime.lua", -- Replace with actual GameID and script names
 }
 
 -- Base URL for script storage
@@ -11,4 +12,6 @@ local gameID = game.GameId
 
 if gameID == 6325068386 then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/4bJkhuhhjh/OverallScript/refs/heads/main/BLR.lua"))()
+elseif gameID == 3110388936 then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/4bJkhuhhjh/OverallScript/refs/heads/main/NinjaTime.lua"))()
 end
